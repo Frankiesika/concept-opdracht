@@ -1,31 +1,342 @@
-/*////////////////////////
-    Table of Contents
-    1. Global Styles
-    2. Typography
-    3. Layout
-        3.1 Reusables
-        3.2 Other
-    4. Areas
-        4.1 Header
-        4.2 Introduction
-        etc.
-    5. Media Queries
-////////////////////////*/
-
 /* ------------------------------- 1. Global Styles -------------------------------- */
+@import url('https://fonts.googleapis.com/css2?family=Merriweather:wght@400;700&family=Roboto&display=swap');
+
+* {
+    margin: 0;
+    padding: 0;
+    text-decoration: none;
+    list-style: none;
+    box-sizing: border-box;
+}
+
+
+body {
+    min-height: 100vh;
+    text-rendering: optimizeSpeed;
+    line-height: 1.5;
+}
+
+body,
+h1,
+h2,
+h3,
+h4,
+p,
+figure,
+blockquote,
+dl,
+dd {
+    margin: 0;
+    padding: 0;
+}
+
+/* Make images easier to work with */
+img,
+picture {
+    max-width: 100%;
+    display: block;
+}
+
+root {
+    --main-bg-clr: #F2F0FF;
+    --main-bg-button-clr: #ED4385;
+    --main-padding-content-box: 10px;
+    --header-bg-clr: #4B49E8;
+    --accent-text-clr: #5722CD;
+    --main-text-clr: #0C0C0C;
+}
+
+/*Paars #5722CD;*/
+/*Blauw #4845E4;*/
+/*Roze #ED4385;*/
+/*Zwart #0C0C0C (voor standaard tekst);*/
+/*Lichtpaars #F2F0FF (voor de grote zwevende woorden, zoals "hello" en "services") */
+/*Uitzonderingen:*/
+/*Lichtgrijs #F3F6F9 (voor de achtergrond van de projecten)*/
+/*Grijs #7A7A7A (voor de service-tegel tekst);*/
 
 /* ------------------------------- 2. Typography ----------------------------------- */
 
 /* ------------------------------- 3. Layout --------------------------------------- */
 
-/* --------------- 3.1 Reusables ----------------------- */
 
-/* --------------- 3.2 Other --------------------------- */
+/* --------------- Header ------------------------- */
+header {
+    background-color: #4B49E8;
+}
 
-/* ------------------------------- 4. Areas ---------------------------------------- */
+nav ul {
+    display: flex;
+    flex-direction: row;
+    justify-content: flex-end;
+    align-items: flex-end;
+    padding: 15px 100px;
+    gap: 3em;
+    /*border: solid 3px black;*/
+}
 
-/* --------------- 4.1 Header ------------------------- */
+ul li > a {
+    color: #F2F0FF;
+    font-family: 'Roboto', sans-serif;
+    font-size: 14px;
+}
 
-/* --------------- 4.2 Introduction ------------------- */
+.outer-header-content {
+    display: flex;
+    flex-direction: row;
+    justify-content: center;
+    align-items: center;
+    flex-basis: 1200px;
+    flex-grow: 0;
+    flex-shrink: 1;
+    text-align: center;
+}
 
-/* ------------------------------- 5. Media Queries -------------------------------- */
+.inner-header-content {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    padding: 30px 50px 0px 50px;
+    color: #F2F0FF;
+}
+
+.inner-header-content > h1, p, .btn-header {
+    padding: 15px;
+}
+
+.inner-header-content > h1 {
+    font-family: 'Merriweather', serif;
+    font-size: 30px;
+}
+
+.inner-header-content > p {
+    font-family: 'Roboto', sans-serif;
+    font-size: 16px;
+}
+
+.inner-header-content > .btn-header {
+    color: #F2F0FF;
+    font-family: 'Roboto', sans-serif;
+    text-transform: uppercase;
+    font-size: 14px;
+    box-shadow: rgba(0, 0, 0, 0.35) 0px 5px 15px;
+}
+
+.btn-header {
+    background-color: #ED4385;
+    padding: 10px 25px;
+    border-radius: 50px;
+}
+
+.inner-header-content > img {
+    padding-top: 100px;
+    color: #F2F0FF;
+}
+
+
+/* --------------- Introduction ------------------- */
+.outer-introduction-section {
+    background-color: #F2F0FF;
+    display: flex;
+    flex-direction: row;
+    justify-content: center;
+    align-items: center;
+    flex-basis: 1200px;
+    padding: 80px 0px;
+    text-align: center;
+}
+
+.inner-introduction-section {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    gap: 2em;
+    color: #4B49E8;
+    flex-flow: column;
+    font-family: 'Merriweather', serif;
+}
+
+.inner-introduction-section > p, .paragraph-introduction {
+    font-family: 'Roboto', sans-serif;
+    font-size: 16px;
+}
+
+.paragraph-introduction {
+    color: #0C0C0C;
+}
+
+
+/* --------------- Work ------------------- */
+.work-section {
+    background-color: #F3F6F9;
+    display: flex;
+    flex-direction: row;
+    flex-wrap: wrap;
+}
+
+.container-work {
+    display: flex;
+    flex-direction: row;
+    position: relative;
+    flex-wrap: wrap;
+    width: 100%;
+    gap: 4em;
+}
+
+.work-content > p {
+    padding: 50px 0px;
+}
+
+.work-content-container {
+    display: flex;
+    flex-direction: row;
+    padding: 50px 40px 100px 40px;
+    gap: 3em;
+    flex-basis: 120px;
+    flex: 1;
+}
+
+.work-content-container1 {
+    display: flex;
+    flex-direction: row-reverse;
+    padding: 0px 40px 0px 40px;
+}
+
+.work-content {
+    padding: 50px;
+    display: flex;
+    flex-direction: column;
+    align-items: flex-start;
+    justify-content: space-around;
+    flex-basis: 1440px;
+    flex-grow: 0;
+    flex-shrink: 1;
+    text-align: left;
+}
+
+.work-content > a {
+    font-family: 'Roboto', sans-serif;
+    color: #5722CD;
+    text-transform: uppercase;
+    font-weight: bold;
+    font-size: 14px;
+}
+
+.img-article {
+    width: 50%;
+    height: auto;
+    box-shadow: rgba(0, 0, 0, 0.35) 0px 5px 15px;
+}
+
+/* --------------- Services ------------------- */
+.services-container {
+    display: flex;
+    flex-direction: row;
+    flex-wrap: wrap;
+    justify-content: center;
+    gap: 2em;
+    padding: 50px 0px;
+}
+
+.service-article {
+    border: 1px solid #4B49E8;
+    padding: 50px;
+}
+
+.service-article > h3 {
+    font-family: 'Merriweather', serif;
+    font-weight: 400;
+    font-size: 20px;
+    color: #5722CD;
+
+}
+
+.service-article > p {
+    font-family: 'Roboto', sans-serif;
+    font-size: 14px;
+    padding: 20px 0px 0px 0px;
+    color: #7A7A7A;
+}
+
+.img-service {
+    width: 20%;
+}
+
+.box {
+    width: 400px;
+    box-shadow: rgba(0, 0, 0, 0.35) 0px 5px 15px;
+}
+
+/* --------------- Form ------------------- */
+
+.contact-form {
+    background-color: #4B49E8;
+    width: 100%;
+    display: inline-block;
+    flex-direction: row;
+    justify-content: center;
+}
+
+.contact-form-content {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    font-family: 'Roboto', sans-serif;
+    color: #F2F0FF;
+    font-size: 14px;
+    padding: 50px 0px;
+}
+
+.contact-form-content > h1, h2, h3 {
+    font-family: 'Merriweather', serif;
+    font-size: 35px;
+}
+
+
+
+input[type=text], [type=email], textarea, button {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    width: 100%;
+    padding: 12px 20px;
+    margin: 8px 0;
+    display: inline-block;
+    border: 1px solid #ccc;
+    border-radius: 4px;
+    box-sizing: border-box;
+}
+
+form {
+    display: flex;
+    flex-direction: column;
+}
+
+button {
+    background-color: #ED4385;
+    color: white;
+    padding: 20px 5px;
+    /*margin: 8px 0;*/
+    border: none;
+    cursor: pointer;
+    text-align: center;
+    text-transform: uppercase;
+    width: 50%;
+    border-radius: 50px;
+    margin: auto;
+    box-shadow: rgba(0, 0, 0, 0.35) 0px 5px 15px;
+}
+
+/* ------------------------------- Footer -------------------------------- */
+footer {
+    background-color: #0C0C0C;
+    color: #F2F0FF;
+    display: flex;
+    flex-direction: row;
+    justify-content: center;
+}
+
+
+/* ------------------------------- Media Queries -------------------------------- */
